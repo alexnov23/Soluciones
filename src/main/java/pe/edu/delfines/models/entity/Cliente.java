@@ -1,0 +1,134 @@
+package pe.edu.delfines.models.entity;
+
+import java.util.Date;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "clientes")
+public class Cliente {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	
+	@Column(name = "documento", length = 8)
+	private String documento;
+	
+	@Column(name = "nombre", length = 60)
+	private String nombre;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name = "fecha_nacimiento")	
+	private Date fechaNacimiento;
+	
+	@Column(name = "lugar_nacimiento", length = 50)
+	private String lugarNacimiento;
+	
+	@Column(name = "sexo", length = 1)
+	private char sexo;
+	
+	@Column(name = "observacion", length = 100)
+	private String observacion;
+	
+	
+	
+	public Cliente() {
+		
+	}
+
+
+
+	public Integer getId() {
+		return id;
+	}
+
+
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+
+
+	public String getDocumento() {
+		return documento;
+	}
+
+
+
+	public void setDocumento(String documento) {
+		this.documento = documento;
+	}
+
+
+
+	public String getNombre() {
+		return nombre;
+	}
+
+
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+
+
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+
+
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+
+
+
+	public String getLugarNacimiento() {
+		return lugarNacimiento;
+	}
+
+
+
+	public void setLugarNacimiento(String lugarNacimiento) {
+		this.lugarNacimiento = lugarNacimiento;
+	}
+
+
+
+	public char getSexo() {
+		return sexo;
+	}
+
+
+
+	public void setSexo(char sexo) {
+		this.sexo = sexo;
+	}
+
+
+
+	public String getObservacion() {
+		return observacion;
+	}
+
+
+
+	public void setObservacion(String observacion) {
+		this.observacion = observacion;
+	}
+	
+	
+	
+}
+
